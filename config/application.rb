@@ -8,32 +8,32 @@ Bundler.require(*Rails.groups)
 
 module RailsTest2
   class Application < Rails::Application
-    	config.time_zone = 'Eastern Time (US & Canada)'
+    config.time_zone = 'Eastern Time (US & Canada)'
 	config.session_store = 
 	javascript_engine = :js
 	config.generators do |g|
-	  g.orm :active_record
+      g.orm :active_record
 	  g.test_framework :rspec
 	  g.javascript_engine :js
 	  g.stylesheet_engine :scss
 	end
+
   console do
-    # this block is called only when running console, so we can safely require pry here
-    require "pry"
+    require 'pry'
+    require 'pry-byebug'
     require 'pry-rails'
     require 'pry-stack_explorer'
     require 'pry-coolline'
-    require "pry-em"
-    require "pry-theme"
-    require "pry-macro"
-    require "pry-inline"
-    require "pry-doc"
-    require "pry-git"
-    require "pry-rails"
-    require "pry-awesome_print"
-    require "pry-pretty-numeric"
-    require "hirb"
-    config.console = Pry
+    require 'pry-em'
+    require 'pry-theme'
+    require 'pry-macro'
+    require 'pry-inline'
+    require 'pry-git'
+    require 'pry-rails'
+    require 'pry-awesome_print'
+    require 'pry-pretty-numeric'
+    require 'hirb'
+    config.console = Pry
   end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -49,6 +49,10 @@ module RailsTest2
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
+    config.active_record.raise_in_transactional_callbacks = false
+
+    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+
   end
 end

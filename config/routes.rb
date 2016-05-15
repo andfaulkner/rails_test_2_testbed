@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+
+  resources :bear do
+    post :create, :on => :collection
+  end
+
+  get 'bear/create'
+  # post 'bear/create' => 'bear#create'
+
+  get "welcome/index"
+
+  root 'welcome#index'
+
+
+  mount API::Base, at: "/"
+
+  # mount Bears::API => '/'
+
+  # mount API::Base => '/api'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

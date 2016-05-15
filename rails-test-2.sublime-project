@@ -1,11 +1,23 @@
 {
-  "folders":
-  [
-    {
-      "path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets"
-    },
-    {
-      "path": "."
-    }
-  ]
+	"folders":
+	[
+		{
+			"path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets/_docs_guides/ruby_docs"
+		},
+		{
+			"path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets"
+		},
+		{
+			"path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets/snippets/ruby-snippets"
+		},
+		{
+			"path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets/dev-env"
+		},
+		{
+			"path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets/scripts/ruby"
+		},
+		{
+			"path": "/home/andrew/.config/sublime-text-3/Packages/User/snippets/custom-manuals"
+		}
+	]
 }
